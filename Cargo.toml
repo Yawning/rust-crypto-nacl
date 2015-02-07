@@ -1,0 +1,17 @@
+[package]
+name = "rust-crypto-nacl"
+version = "0.0.1"
+authors = ["Yawning Angel <yawning@schwanenlied.me>"]
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/yawning/rust-crypto-nacl/"
+repository = "https://github.com/yawning/rust-crypto-nacl/"
+description = "A Rust-Crypto based implementation of selected NaCl primitives."
+keywords = [ "Crypto", "NaCl" ]
+readme = "README.md"
+
+[lib]
+name = "crypto-nacl"
+
+[dependencies]
+rust-crypto = "*"
+rand = "*"
