@@ -7,7 +7,7 @@
 use rand::{Rng, OsRng};
 use crypto::curve25519::{curve25519, curve25519_base};
 use crypto::digest::Digest;
-use crypto::salsa20::Salsa20;
+use crypto::salsa20::hsalsa20;
 use crypto::sha2::Sha512Trunc256;
 
 use secretbox::{crypto_secretbox, crypto_secretbox_open};
@@ -75,7 +75,7 @@ pub fn crypto_box_beforenm(pk: &[u8], sk: &[u8]) -> [u8; crypto_box_SECRETKEYBYT
 
     // Derive the crypto_secretbox key with HSalsa20.
     let mut key = [0u8; 32];
-    Salsa20::hsalsa20(&curve_key, &ZERO_HSALSA_NONCE, &mut key);
+    hsalsa20(&curve_key, &ZERO_HSALSA_NONCE, &mut key);
 
     key
 }

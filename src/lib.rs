@@ -7,7 +7,6 @@
 #![crate_name = "crypto-nacl"]
 
 #![feature(simd)]
-#![cfg_attr(test, feature(core))]
 #![cfg_attr(test, feature(test))]
 
 extern crate rand;
